@@ -3,6 +3,8 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Login from './components/Login'
 import Counter from './components/Counter'
+import FormWithState from './components/Forms/FormWithState'
+import Effect from './components/hooks/Effect'
 
 function App() {
 
@@ -16,18 +18,20 @@ function App() {
     count = count + 1
     console.log(count);
   }
+  const submit = (e) => {
+
+  }
 
   return <>
-    <Navbar
+    {/* <Navbar
       websiteName={WebsiteName}
       websiteImage={websiteImage}
       element={element}
-    />
-    <h1>Count : {count}</h1>
-    <button onClick={increment}>Increment</button>
-    <Login />
-    <Footer />
-    <Counter/>
+    /> */}
+    {/* <h1>Count : {count}</h1>
+    <button onClick={increment}>Increment</button> */}
+    {/* <FormWithState /> */}
+    <Effect/>
   </>
 }
 
