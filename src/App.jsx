@@ -5,6 +5,9 @@ import Login from './components/Login'
 import Counter from './components/Counter'
 import FormWithState from './components/Forms/FormWithState'
 import Effect from './components/hooks/Effect'
+import Effect2 from './components/hooks/Effect2'
+import Ref from './components/hooks/useRef/Ref'
+import Ref2 from './components/hooks/useRef/Ref2'
 
 function App() {
 
@@ -31,7 +34,10 @@ function App() {
     {/* <h1>Count : {count}</h1>
     <button onClick={increment}>Increment</button> */}
     {/* <FormWithState /> */}
-    <Effect/>
+    {/* <Effect/> */}
+    {/* <Effect2/> */}
+    {/* <Ref/> */}
+    <Ref2/>
   </>
 }
 

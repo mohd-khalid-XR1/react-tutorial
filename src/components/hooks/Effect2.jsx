@@ -1,12 +1,10 @@
-import React, { useState, useEffect, use } from 'react'
+import React, { useState } from 'react'
+import { useEffect } from 'react'
 
-const Effect = () => {
-    
-    console.log("Render");
-
-    const [username, setUsername] = useState('')
+const Effect2 = () => {
     const [products, setProducts] = useState([])
-    console.log(products);
+    const [count, setCount] = useState(0)
+    const [name, setName] = useState('')
     async function fetchData() {
         // console.log("fetching data from database");
         const response = await fetch('https://dummyjson.com/products')
@@ -14,6 +12,9 @@ const Effect = () => {
         // console.log(data);
         if (Array.isArray(data?.products)) {
             setProducts(data?.products)
+            setTimeout(() => {
+                setName("product fetched")
+            }, 5000)
         } else {
             alert("api fetch failed")
         }
@@ -22,10 +23,19 @@ const Effect = () => {
 
     useEffect(() => {
         fetchData()
+        // console.log("mount : mount means when component is visible to ui");
     }, [])
+
+    useEffect(() => {
+        console.log("Render when some State change");
+    }, [count, name])
+
 
     return (
         <div>
+            <h2>name : {name}</h2>
+            <h2>count : {count}</h2>
+            <button onClick={() => setCount((prev) => prev + 1)}>increment</button>
             <input type="text" onChange={(e) => setUsername(e.target.value)} />
             {products.map((product, index) => {
                 const { price, returnPolicy } = product
@@ -41,4 +51,4 @@ const Effect = () => {
     )
 }
 
-export default Effect
+export default Effect2
