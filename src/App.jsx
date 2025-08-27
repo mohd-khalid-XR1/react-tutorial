@@ -1,44 +1,28 @@
 import './App.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import Login from './components/Login'
 import Counter from './components/Counter'
 import FormWithState from './components/Forms/FormWithState'
 import Effect from './components/hooks/Effect'
 import Effect2 from './components/hooks/Effect2'
 import Ref from './components/hooks/useRef/Ref'
 import Ref2 from './components/hooks/useRef/Ref2'
+import { Routes, Route } from 'react-router-dom'
+import Login from './pages/Login'
+import Home from './pages/Home'
+import Signup from './pages/Signup'
+import Products from './pages/Products'
 
 function App() {
 
-
-  const WebsiteName = "Tutorial-React"
-  const websiteImage = 'https://images.pexels.com/photos/27237515/pexels-photo-27237515.jpeg'
-  const element = <a href="#">{WebsiteName}</a>
-  let count = 0
-
-  const increment = () => {
-    count = count + 1
-    console.log(count);
-  }
-  const submit = (e) => {
-
-  }
-
-  return <>
-    {/* <Navbar
-      websiteName={WebsiteName}
-      websiteImage={websiteImage}
-      element={element}
-    /> */}
-    {/* <h1>Count : {count}</h1>
-    <button onClick={increment}>Increment</button> */}
-    {/* <FormWithState /> */}
-    {/* <Effect/> */}
-    {/* <Effect2/> */}
-    {/* <Ref/> */}
-    <Ref2/>
-  </>
+  return (
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/signup' element={<Signup />} />
+      <Route path='/product' element={<Products/>}/>
+    </Routes>
+  )
 }
 
 export default App

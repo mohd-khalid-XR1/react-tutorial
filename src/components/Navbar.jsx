@@ -1,5 +1,5 @@
 import './Navbar.css'
-
+import { Link} from 'react-router-dom'
 const Navbar = (props) => {
     // console.log(props);
     const { websiteImage } = props
@@ -14,9 +14,9 @@ const Navbar = (props) => {
 
             <div className="links">
                 {props.element}
-                <a href="">About</a>
-                <a href="">Contact</a>
-                <a href="">Create</a>
+                <Link to={'/'}>Home</Link>
+                <Link to={'/login'}>Login</Link>
+                <Link to={'/signup'}>Signup</Link>
                 <span href="#" className="bell">
                     <span>2</span>
                     🔔
@@ -24,7 +24,7 @@ const Navbar = (props) => {
             </div>
 
             <div className="nav-btn">
-                <button>Login</button>
+                <Link to={`/login`}><button>Login</button></Link>
                 <button>Signup</button>
                 <button id="menu">Menu</button>
             </div>
